@@ -13,6 +13,8 @@ import java.util.List;
 
 import static com.immccc.rps.player.PlayerAIHandlerType.ALWAYS_ROCK;
 import static com.immccc.rps.player.PlayerAIHandlerType.RANDOM;
+import static org.hamcrest.Matchers.is;
+import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.verify;
 
@@ -51,6 +53,12 @@ public class PlayerServiceTest {
         Player player = givenAPlayer(NON_EXISTING_AI_HANDLER_TYPE);
 
         service.makeSelection(player);
+    }
+
+    @Test
+    public void createPlayer() {
+        Player player = service.createPlayer(EXISTING_AI_HANDLER_TYPE);
+        assertThat(player.getAiHandlerType(), is(EXISTING_AI_HANDLER_TYPE));
     }
 
     private Player givenAPlayer(PlayerAIHandlerType aiHandlerType) {

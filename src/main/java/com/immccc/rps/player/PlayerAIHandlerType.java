@@ -1,6 +1,6 @@
 package com.immccc.rps.player;
 
-enum PlayerAIHandlerType {
+public enum PlayerAIHandlerType {
     RANDOM,
     ALWAYS_ROCK
 }

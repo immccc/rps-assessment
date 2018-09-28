@@ -4,17 +4,19 @@ import com.immccc.rps.player.Player;
 import com.immccc.rps.player.PlayerSelectionType;
 import com.immccc.rps.player.PlayerService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
 import static com.immccc.rps.player.PlayerSelectionType.*;
 
+@Service
 @RequiredArgsConstructor
 public class RoundService {
 
     private final PlayerService playerService;
 
-    public final Round makeRound(Player player1, Player player2) {
+    public Round makeRound(Player player1, Player player2) {
         PlayerSelectionType player1Selection = playerService.makeSelection(player1);
         PlayerSelectionType player2Selection = playerService.makeSelection(player2);
 
@@ -24,7 +26,7 @@ public class RoundService {
                 .build();
     }
 
-    public final Optional<Player> getWinner(Player player1, Player player2, Round round) {
+    public Optional<Player> getWinner(Player player1, Player player2, Round round) {
 
         PlayerSelectionType selectionPlayer1 = round.getPlayer1Selection();
         PlayerSelectionType selectionPlayer2 = round.getPlayer2Selection();

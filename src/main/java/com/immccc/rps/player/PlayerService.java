@@ -22,4 +22,10 @@ public class PlayerService {
                 .findFirst().orElseThrow(() -> new IllegalStateException(
                         String.format("Player handler of type %s has not been defined", player.getAiHandlerType())));
     }
+
+    public Player createPlayer(PlayerAIHandlerType aiHandlerType) {
+        return Player.builder()
+                .aiHandlerType(aiHandlerType)
+                .build();
+    }
 }
