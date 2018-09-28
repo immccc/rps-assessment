@@ -11,7 +11,7 @@ public class PlayerService {
 
     private final List<PlayerAIHandler> aiHandlers;
 
-    public final PlayerSelectionType makeSelection(Player player) {
+    public PlayerSelectionType makeSelection(Player player) {
         PlayerAIHandler handler = getPlayerAIHandler(player);
         return handler.makeSelection();
     }
