@@ -31,7 +31,7 @@ dependencyManagement {
 dependencies {
     compile('org.joinfaces:primefaces-spring-boot-starter:3.2.5')
     providedRuntime('org.joinfaces:tomcat-spring-boot-starter')
-    providedRuntime('javax.enterprise:cdi-api:2.0')
+    compile('javax.enterprise:cdi-api:2.0')
 
     compile('com.google.guava:guava:19.0')
     compileOnly('org.projectlombok:lombok')

@@ -3,7 +3,8 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
 
 <h:head>
     <title>Rock/Paper/Scissors Assessment</title>
@@ -11,6 +12,31 @@
 
 <h:body>
 
+    <div>
+        <h:form>
+            <p:commandButton value="Play Round" update="rounds" id="play" actionListener="#{game.makeRound}"/>
+            <p:commandButton value="Restart Game" update="rounds" id="restart" actionListener="#{game.startNewGame}"/>
+        </h:form>
+
+    </div>
+
+    <hr/>
+
+    <div>
+        <p:dataTable id="rounds" var="round" value="#{game.rounds}">
+            <p:column headerText="#{game.player1}">
+                <h:outputText value="#{round.player1Selection}"/>
+            </p:column>
+
+            <p:column headerText="#{game.player2}">
+                <h:outputText value="#{round.player2Selection}"/>
+            </p:column>
+
+            <p:column headerText="Winner">
+                <h:outputText value="#{round.winner}"/>
+            </p:column>
+        </p:dataTable>
+    </div>
 </h:body>
 
 </html>

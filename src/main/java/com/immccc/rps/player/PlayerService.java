@@ -23,8 +23,9 @@ public class PlayerService {
                         String.format("Player handler of type %s has not been defined", player.getAiHandlerType())));
     }
 
-    public Player createPlayer(PlayerAIHandlerType aiHandlerType) {
+    public Player createPlayer(String name, PlayerAIHandlerType aiHandlerType) {
         return Player.builder()
+                .name(name)
                 .aiHandlerType(aiHandlerType)
                 .build();
     }

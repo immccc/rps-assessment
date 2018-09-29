@@ -23,6 +23,7 @@ public class PlayerServiceTest {
 
     private static final PlayerAIHandlerType EXISTING_AI_HANDLER_TYPE = RANDOM;
     private static final PlayerAIHandlerType NON_EXISTING_AI_HANDLER_TYPE = ALWAYS_ROCK;
+    private static final String PLAYER_NAME = "player name";
 
     @Spy
     private List<PlayerAIHandler> aiHandlers = new LinkedList<>();
@@ -57,7 +58,7 @@ public class PlayerServiceTest {
 
     @Test
     public void createPlayer() {
-        Player player = service.createPlayer(EXISTING_AI_HANDLER_TYPE);
+        Player player = service.createPlayer(PLAYER_NAME, EXISTING_AI_HANDLER_TYPE);
         assertThat(player.getAiHandlerType(), is(EXISTING_AI_HANDLER_TYPE));
     }
 
