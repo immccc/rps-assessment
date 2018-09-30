@@ -8,8 +8,8 @@ import com.immccc.rps.stats.StatsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import static com.immccc.rps.player.PlayerAIHandlerType.ALWAYS_ROCK;
-import static com.immccc.rps.player.PlayerAIHandlerType.RANDOM;
+import static com.immccc.rps.player.handler.PlayerAIHandlerType.ALWAYS_ROCK;
+import static com.immccc.rps.player.handler.PlayerAIHandlerType.RANDOM;
 
 @Service
 @RequiredArgsConstructor

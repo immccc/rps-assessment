@@ -12,9 +12,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import static com.immccc.rps.player.PlayerAIHandlerType.ALWAYS_ROCK;
-import static com.immccc.rps.player.PlayerAIHandlerType.RANDOM;
 import static com.immccc.rps.player.PlayerSelectionType.SCISSORS;
+import static com.immccc.rps.player.handler.PlayerAIHandlerType.ALWAYS_ROCK;
+import static com.immccc.rps.player.handler.PlayerAIHandlerType.RANDOM;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.empty;
 import static org.junit.Assert.assertThat;

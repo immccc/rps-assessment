@@ -1,6 +1,7 @@
-package com.immccc.rps.player;
+package com.immccc.rps.player.handler;
 
 import com.google.common.collect.ImmutableSet;
+import com.immccc.rps.player.PlayerSelectionType;
 import org.junit.Test;
 
 import java.util.Set;

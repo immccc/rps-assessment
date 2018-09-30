@@ -1,10 +1,11 @@
-package com.immccc.rps.player;
+package com.immccc.rps.player.handler;
 
+import com.immccc.rps.player.PlayerSelectionType;
 import org.springframework.stereotype.Service;
 
 import java.util.Random;
 
-import static com.immccc.rps.player.PlayerAIHandlerType.RANDOM;
+import static com.immccc.rps.player.handler.PlayerAIHandlerType.RANDOM;
 
 @Service
 class RandomPlayerAIHandler implements PlayerAIHandler {

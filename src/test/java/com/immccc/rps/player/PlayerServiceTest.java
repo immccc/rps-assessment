@@ -1,5 +1,7 @@
 package com.immccc.rps.player;
 
+import com.immccc.rps.player.handler.PlayerAIHandler;
+import com.immccc.rps.player.handler.PlayerAIHandlerType;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,8 +13,8 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.LinkedList;
 import java.util.List;
 
-import static com.immccc.rps.player.PlayerAIHandlerType.ALWAYS_ROCK;
-import static com.immccc.rps.player.PlayerAIHandlerType.RANDOM;
+import static com.immccc.rps.player.handler.PlayerAIHandlerType.ALWAYS_ROCK;
+import static com.immccc.rps.player.handler.PlayerAIHandlerType.RANDOM;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.Mockito.doReturn;

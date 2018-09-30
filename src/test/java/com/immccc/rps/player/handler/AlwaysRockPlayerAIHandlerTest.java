@@ -1,5 +1,6 @@
-package com.immccc.rps.player;
+package com.immccc.rps.player.handler;
 
+import com.immccc.rps.player.PlayerSelectionType;
 import org.junit.Test;
 
 import static org.hamcrest.Matchers.is;
