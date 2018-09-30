@@ -1,8 +1,6 @@
 package com.immccc.rps.game;
 
 import com.immccc.rps.player.Player;
-import com.immccc.rps.player.PlayerMapper;
-import com.immccc.rps.player.PlayerView;
 import com.immccc.rps.round.RoundMapper;
 import com.immccc.rps.round.RoundService;
 import com.immccc.rps.round.RoundView;
@@ -27,19 +25,15 @@ public class GameView {
     @Getter(PACKAGE)
     private Game game;
 
+    @Getter
+    private String player1;
+    @Getter
+    private String player2;
+
     public GameView(GameService gameService, RoundService roundService) {
         this.gameService = gameService;
         this.roundService = roundService;
-
         startNewGame();
-    }
-
-    public PlayerView getPlayer1() {
-        return PlayerMapper.toPlayerView(game.getPlayer1());
-    }
-
-    public PlayerView getPlayer2() {
-        return PlayerMapper.toPlayerView(game.getPlayer2());
     }
 
     public List<RoundView> getRounds() {
@@ -57,5 +51,7 @@ public class GameView {
 
     public void startNewGame() {
         game = gameService.startGame();
+        player1 = game.getPlayer1().getName();
+        player2 = game.getPlayer2().getName();
     }
 }

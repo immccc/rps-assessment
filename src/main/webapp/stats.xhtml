@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:p="http://primefaces.org/ui">
+    <h:head/>
+
+    <h:body>
+        <ui:composition>
+            <h:form>
+                <p:poll interval="#{stats.refreshInterval}" listener="#{stats.refresh}"
+                        update="player1Victories player2Victories draws rounds"/>
+                <ul>
+                    <li>
+                        <h:outputLabel for="player1Victories" value="Player 1 victories:" style="font-weight:bold"/>
+                        <h:outputText id="player1Victories" value="#{stats.player1Victories}"/>
+                    </li>
+                    <li>
+                        <h:outputLabel for="player2Victories" value="Player 2 victories:" style="font-weight:bold"/>
+                        <h:outputText id="player2Victories" value="#{stats.player2Victories}"/>
+                    </li>
+                    <li>
+                        <h:outputLabel for="draws" value="Draws:" style="font-weight:bold"/>
+                        <h:outputText id="draws" value="#{stats.draws}"/>
+                    </li>
+                    <li>
+                        <h:outputLabel for="rounds" value="Rounds:" style="font-weight:bold"/>
+                        <h:outputText id="rounds" value="#{stats.rounds}"/>
+                    </li>
+                </ul>
+            </h:form>
+        </ui:composition>
+    </h:body>
+</h:html>

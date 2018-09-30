@@ -2,7 +2,6 @@ package com.immccc.rps.game;
 
 import com.immccc.rps.player.Player;
 import com.immccc.rps.player.PlayerSelectionType;
-import com.immccc.rps.player.PlayerView;
 import com.immccc.rps.round.Round;
 import com.immccc.rps.round.RoundService;
 import com.immccc.rps.round.RoundView;
@@ -47,18 +46,6 @@ public class GameViewTest {
 
         view = new GameView(gameService, roundService);
         assertThat(view.getGame(), notNullValue(Game.class));
-    }
-
-    @Test
-    public void getPlayer1() {
-        PlayerView playerView = view.getPlayer1();
-        assertThat(playerView.getName(), is(PLAYER_1_NAME));
-    }
-
-    @Test
-    public void getPlayer2() {
-        PlayerView playerView = view.getPlayer2();
-        assertThat(playerView.getName(), is(PLAYER_2_NAME));
     }
 
     @Test

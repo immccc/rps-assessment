@@ -5,6 +5,7 @@ import com.immccc.rps.player.PlayerSelectionType;
 import com.immccc.rps.player.PlayerService;
 import com.immccc.rps.round.Round;
 import com.immccc.rps.round.RoundService;
+import com.immccc.rps.stats.StatsService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -31,6 +32,9 @@ public class GameServiceTest {
     @Mock
     private RoundService roundService;
 
+    @Mock
+    private StatsService statsService;
+
     @InjectMocks
     private GameService gameService;
 
@@ -54,6 +58,7 @@ public class GameServiceTest {
         gameService.makeRound(game);
 
         assertThat(game.getRounds(), contains(round));
+        verify(statsService).updateStats(round, game.getPlayer1(), game.getPlayer2());
     }
 
     private Round givenAGameRound(Game game) {
