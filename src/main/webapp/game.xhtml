@@ -11,9 +11,13 @@
     <h:body>
         <ui:composition>
             <h:form>
-                <p:commandButton value="Play Round" update="rounds" id="play" actionListener="#{game.makeRound}"/>
-                <p:commandButton value="Restart Game" update="rounds" id="restart"
+                <p:commandButton value="Play Round" update="rounds numberOfRounds" id="play"
+                                 actionListener="#{game.makeRound}"/>
+                <p:commandButton value="Restart Game" update="rounds numberOfRounds" id="restart"
                                  actionListener="#{game.startNewGame}"/>
+
+                <h:outputLabel for="numberOfRounds" value="Rounds played:" style="font-weight:bold"/>
+                <h:outputText id="numberOfRounds" value="#{game.numberOfRounds}"/>
 
                 <p:dataTable id="rounds" var="round" value="#{game.rounds}">
                     <p:column headerText="#{game.player1}">

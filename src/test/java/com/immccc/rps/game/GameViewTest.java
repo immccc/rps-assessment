@@ -45,6 +45,10 @@ public class GameViewTest {
         givenAGame();
 
         view = new GameView(gameService, roundService);
+    }
+
+    @Test
+    public void viewHasBeenInitialized() {
         assertThat(view.getGame(), notNullValue(Game.class));
     }
 
@@ -79,6 +83,12 @@ public class GameViewTest {
 
         Game newGame = view.getGame();
         assertThat(newGame, not(is(previousGame)));
+    }
+
+    @Test
+    public void getNumberOfRounds() {
+        int numberOfRounds = view.getNumberOfRounds();
+        assertThat(numberOfRounds, is(view.getGame().getRounds().size()));
     }
 
     private void givenAGame() {

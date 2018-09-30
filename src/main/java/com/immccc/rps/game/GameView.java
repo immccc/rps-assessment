@@ -45,6 +45,10 @@ public class GameView {
                 .collect(Collectors.toList());
     }
 
+    public int getNumberOfRounds() {
+        return game.getRounds().size();
+    }
+
     public void makeRound() {
         gameService.makeRound(game);
     }
@@ -54,4 +58,5 @@ public class GameView {
         player1 = game.getPlayer1().getName();
         player2 = game.getPlayer2().getName();
     }
+
 }
