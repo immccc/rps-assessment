@@ -53,7 +53,7 @@ public class GameView {
         gameService.makeRound(game);
     }
 
-    public void startNewGame() {
+    private void startNewGame() {
         game = gameService.startGame();
         player1 = game.getPlayer1().getName();
         player2 = game.getPlayer2().getName();

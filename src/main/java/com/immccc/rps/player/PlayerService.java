@@ -18,6 +18,13 @@ public class PlayerService {
         return handler.makeSelection();
     }
 
+    public Player createPlayer(String name, PlayerAIHandlerType aiHandlerType) {
+        return Player.builder()
+                .name(name)
+                .aiHandlerType(aiHandlerType)
+                .build();
+    }
+
     private PlayerAIHandler getPlayerAIHandler(Player player) {
         return aiHandlers.stream()
                 .filter(candidateHandler -> candidateHandler.getType().equals(player.getAiHandlerType()))
@@ -25,10 +32,4 @@ public class PlayerService {
                         String.format("Player handler of type %s has not been defined", player.getAiHandlerType())));
     }
 
-    public Player createPlayer(String name, PlayerAIHandlerType aiHandlerType) {
-        return Player.builder()
-                .name(name)
-                .aiHandlerType(aiHandlerType)
-                .build();
-    }
 }
